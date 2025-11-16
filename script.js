@@ -299,6 +299,27 @@ if ('PerformanceObserver' in window) {
         }
     });
     perfObserver.observe({ entryTypes: ['largest-contentful-paint', 'first-input-delay'] });
+
+    // CLS Monitoring
+    let clsValue = 0;
+    let clsEntries = [];
+    
+    const clsObserver = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+            if (!entry.hadRecentInput) {
+                clsEntries.push(entry);
+                clsValue += entry.value;
+                console.log('CLS:', clsValue.toFixed(4), 'Shift detected:', entry.sources);
+            }
+        }
+    });
+    
+    clsObserver.observe({ type: 'layout-shift', buffered: true });
+    
+    // Report CLS on page unload
+    window.addEventListener('beforeunload', () => {
+        console.log('Final CLS Score:', clsValue.toFixed(4));
+    });
 }
 
 // Ensure all sections are visible before printing
