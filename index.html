@@ -19,7 +19,7 @@
     <meta name="apple-mobile-web-app-title" content="Ahmad Fazeli Resume">
     <meta http-equiv="x-dns-prefetch-control" content="on">
     <style>
-        /* Critical CSS for above-the-fold content */
+        /* Critical CSS for above-the-fold content with layout shift prevention */
         :root {
             --primary-color: #00633D;
             --secondary-color: #004C2F;
@@ -36,17 +36,48 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html {
+            overflow-x: hidden;
+        }
         body {
             font-family: 'Vazirmatn', 'Noto Kufi Arabic', system-ui, -apple-system, sans-serif;
             background: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
             transition: all 0.3s ease;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
+        /* Prevent layout shifts by reserving space */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+            min-height: 100vh;
+        }
+        /* Fixed mobile navigation to prevent shifts */
+        .mobile-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(0, 99, 61, 0.95);
+            backdrop-filter: blur(10px);
+            display: none;
+            z-index: 1000;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        @media (max-width: 768px) {
+            .mobile-nav {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 0 10px;
+            }
+            .container {
+                padding-bottom: 90px; /* Space for fixed mobile nav */
+            }
         }
         .profile-header {
             display: flex;
@@ -54,17 +85,20 @@
             align-items: flex-start;
             gap: 3rem;
             margin-bottom: 3rem;
+            min-height: 320px; /* Reserve space to prevent shifts */
         }
         .profile-name {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 0.5rem;
+            min-height: 60px; /* Reserve space */
         }
         .profile-title {
             font-size: 1.25rem;
             color: var(--secondary-color);
             margin-bottom: 1.5rem;
+            min-height: 30px; /* Reserve space */
         }
         .profile-photo {
             width: 284px;
@@ -73,6 +107,20 @@
             object-fit: cover;
             border: 4px solid var(--primary-color);
             box-shadow: var(--shadow);
+            display: block; /* Prevent inline spacing issues */
+        }
+        .profile-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            min-height: 100px; /* Reserve space */
+        }
+        .metric-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            min-height: 80px; /* Reserve space */
         }
         .nav-actions {
             display: flex;
@@ -96,15 +144,44 @@
             background: var(--secondary-color);
             transform: translateY(-2px);
         }
+        /* Prevent shifts in profile section */
+        .profile-section {
+            position: relative;
+            min-height: 400px; /* Reserve minimum space */
+        }
+        .profile-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
         @media (max-width: 768px) {
             .profile-header {
                 flex-direction: column;
                 text-align: center;
                 gap: 2rem;
+                min-height: 500px; /* Reserve more space for mobile */
             }
             .profile-photo {
                 width: 200px;
                 height: 200px;
+            }
+            .profile-metrics {
+                grid-template-columns: repeat(2, 1fr); /* 2x2 grid for mobile */
+            }
+        }
+        @media (max-width: 480px) {
+            .profile-metrics {
+                grid-template-columns: repeat(2, 1fr); /* Ensure 2x2 grid */
+                gap: 0.5rem;
+            }
+            .metric-card {
+                min-height: 70px; /* Smaller cards for mobile */
+                padding: 0.75rem;
             }
         }
     </style>
@@ -227,7 +304,7 @@
                     </div>
                 </div>
                 <div class="profile-image">
-                    <img src="ahmadprofile.jpg" alt="Ahmad Fazeli" class="profile-photo" width="284" height="284" loading="eager" fetchpriority="high" srcset="ahmadprofile-200w.jpg 200w, ahmadprofile-284w.jpg 284w, ahmadprofile-400w.jpg 400w" sizes="(max-width: 768px) 200px, 284px">
+                    <img src="ahmadprofile.jpg" alt="Ahmad Fazeli" class="profile-photo" width="284" height="284" loading="eager" fetchpriority="high">
                 </div>
             </div>
             <div class="cta-metrics">

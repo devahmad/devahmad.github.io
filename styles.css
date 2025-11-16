@@ -26,6 +26,7 @@ body {
     color: var(--text-dark);
     background: linear-gradient(135deg, #003824 0%, #00633D 100%);
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 body[lang="ar"] {
@@ -152,13 +153,14 @@ body[lang="ar"] {
 .profile-section::before {
     content: '';
     position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 75%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.06) 0%, transparent 75%);
     animation: float 8s ease-in-out infinite;
     pointer-events: none;
+    z-index: 0;
 }
 
 @keyframes float {
@@ -173,6 +175,7 @@ body[lang="ar"] {
     margin-bottom: 30px;
     position: relative;
     z-index: 1;
+    min-height: 200px; /* Reserve space to prevent shifts */
 }
 
 .profile-info h1 {
@@ -180,6 +183,7 @@ body[lang="ar"] {
     font-weight: 700;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    min-height: 60px; /* Reserve space for title */
 }
 
 .profile-title {
@@ -187,6 +191,7 @@ body[lang="ar"] {
     font-weight: 300;
     margin-bottom: 20px;
     opacity: 0.9;
+    min-height: 30px; /* Reserve space for subtitle */
 }
 
 .contact-info {
@@ -570,8 +575,9 @@ body[lang="ar"] {
 
 .profile-metrics {
     display: grid;
-    grid-template-columns: repeat(4, minmax(120px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
+    min-height: 100px; /* Reserve space to prevent shifts */
 }
 
 .metric-card {
@@ -581,6 +587,7 @@ body[lang="ar"] {
     padding: 12px 16px;
     text-align: center;
     box-shadow: var(--shadow-sm);
+    min-height: 80px; /* Reserve space to prevent shifts */
 }
 
 .metric-value {
@@ -715,6 +722,7 @@ body[lang="ar"] {
 
     .profile-metrics {
         grid-template-columns: repeat(2, 1fr);
+        min-height: 160px; /* Reserve space for 2x2 grid on mobile */
     }
     
     .profile-info h1 {
@@ -917,16 +925,16 @@ body[lang="en"] .timeline-item {
 }
 .mobile-nav {
     position: fixed;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 1000;
-    background: rgba(0, 99, 61, 0.15);
+    height: auto; /* Allow dynamic height */
+    min-height: 70px; /* Minimum height for layout stability */
+    background: rgba(0, 99, 61, 0.95);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 99, 61, 0.3);
-    border-radius: 14px;
-    box-shadow: var(--shadow-lg);
-    display: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: none; /* Hidden by default, shown in media query */
     padding: 8px;
     gap: 6px;
     justify-content: space-between;
@@ -970,6 +978,9 @@ body[lang="en"] .timeline-item {
 @media (max-width: 768px) {
     .side-nav { display: none; }
     .mobile-nav { display: flex; }
+    .container {
+        padding-bottom: 100px; /* Increased space for dynamic height mobile navigation */
+    }
 }
 
 @media (max-width: 480px) {
@@ -977,4 +988,10 @@ body[lang="en"] .timeline-item {
     .mobile-nav .nav-action span { display: none; }
     .mobile-nav .nav-link i,
     .mobile-nav .nav-action i { width: 22px; font-size: 18px; }
+    .mobile-nav .nav-link,
+    .mobile-nav .nav-action {
+        flex: 1 1 60px; /* Smaller flex basis for icon-only mode */
+        justify-content: center;
+        padding: 8px 6px;
+    }
 }

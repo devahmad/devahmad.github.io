@@ -22,7 +22,16 @@ self.addEventListener('fetch', event => {
         if (response) {
           return response;
         }
-        return fetch(event.request);
+        return fetch(event.request).then(fetchResponse => {
+          // Cache successful image responses
+          if (event.request.url.includes('ahmadprofile.jpg') && fetchResponse.ok) {
+            const responseToCache = fetchResponse.clone();
+            caches.open(CACHE_NAME).then(cache => {
+              cache.put(event.request, responseToCache);
+            });
+          }
+          return fetchResponse;
+        });
       }
     )
   );
