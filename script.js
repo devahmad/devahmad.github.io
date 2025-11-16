@@ -14,14 +14,15 @@ function getNextLanguage() {
 
 function renderLanguage() {
     const body = document.body;
-    const langToggle = document.getElementById('langToggle');
     const langText = document.getElementById('langText');
+    const langTextMobile = document.getElementById('langTextMobile');
 
     body.setAttribute('lang', currentLang);
     body.dir = (currentLang === 'fa' || currentLang === 'ar') ? 'rtl' : 'ltr';
 
     const nextLangName = langNames[getNextLanguage()];
     if (langText) langText.textContent = nextLangName;
+    if (langTextMobile) langTextMobile.textContent = nextLangName;
 
     const title = document.querySelector('title');
     if (title) {
@@ -68,6 +69,7 @@ function switchLanguage() {
 // Initialize language switcher
 document.addEventListener('DOMContentLoaded', function() {
     const langToggle = document.getElementById('langToggle');
+    const langToggleMobile = document.getElementById('langToggleMobile');
     
     // Check for saved language preference
     const savedLang = localStorage.getItem('preferredLanguage');
@@ -77,7 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
     renderLanguage();
     
     // Add click event listener
-    langToggle.addEventListener('click', switchLanguage);
+    if (langToggle) langToggle.addEventListener('click', switchLanguage);
+    if (langToggleMobile) langToggleMobile.addEventListener('click', switchLanguage);
     
     // Add smooth scrolling for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -104,6 +107,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                if (entry.target.id) {
+                    const navLinks = document.querySelectorAll('.side-nav .nav-link, .mobile-nav .nav-link');
+                    navLinks.forEach(link => {
+                        const href = link.getAttribute('href');
+                        link.classList.toggle('active', href === `#${entry.target.id}`);
+                    });
+                }
             }
         });
     }, observerOptions);
@@ -116,6 +126,14 @@ document.addEventListener('DOMContentLoaded', function() {
         section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(section);
     });
+
+    const aboutEl = document.getElementById('about');
+    if (aboutEl) {
+        aboutEl.style.opacity = '0';
+        aboutEl.style.transform = 'translateY(30px)';
+        aboutEl.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(aboutEl);
+    }
     
     // Add hover effects to skill tags
     const skillTags = document.querySelectorAll('.skill-tag');
@@ -177,13 +195,13 @@ document.addEventListener('DOMContentLoaded', function() {
             profileSection.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
         });
     }
+    const printNav = document.getElementById('printNav');
+    const printNavMobile = document.getElementById('printNavMobile');
     const downloadBtn = document.getElementById('downloadCV') || document.querySelector('.cta-btn.primary');
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            printResume();
-        });
-    }
+    const handlePrint = (e) => { e.preventDefault(); printResume(); };
+    if (printNav) printNav.addEventListener('click', handlePrint);
+    if (printNavMobile) printNavMobile.addEventListener('click', handlePrint);
+    if (downloadBtn) downloadBtn.addEventListener('click', handlePrint);
 });
 
 // Add keyboard navigation
@@ -253,8 +271,7 @@ const styleSheet = document.createElement('style');
 styleSheet.textContent = printStyles;
 document.head.appendChild(styleSheet);
 
-// Initialize print button after DOM loads
-document.addEventListener('DOMContentLoaded', addPrintButton);
+// Initialize print button after DOM loads (removed floating button)
 
 // Ensure all sections are visible before printing
 window.addEventListener('beforeprint', () => {

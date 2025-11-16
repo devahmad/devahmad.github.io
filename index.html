@@ -12,10 +12,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="language-switcher">
-        <button id="langToggle" class="lang-btn">
+    
+    <div class="side-nav">
+        <a href="#about" class="nav-link"><i class="fas fa-user"></i><span data-fa="درباره" data-en="About" data-ar="عني">درباره</span></a>
+        <a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i><span data-fa="سوابق" data-en="Experience" data-ar="الخبرات">سوابق</span></a>
+        <a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i><span data-fa="تحصیلات" data-en="Education" data-ar="التعليم">تحصیلات</span></a>
+        <a href="#skills" class="nav-link"><i class="fas fa-tools"></i><span data-fa="مهارت‌ها" data-en="Skills" data-ar="المهارات">مهارت‌ها</span></a>
+        <a href="#portfolio" class="nav-link"><i class="fas fa-images"></i><span data-fa="نمونه‌کار" data-en="Portfolio" data-ar="الأعمال">نمونه‌کار</span></a>
+        <div class="nav-actions">
+            <button id="langToggle" class="nav-action">
+                <i class="fas fa-globe"></i>
+                <span id="langText">English</span>
+            </button>
+            <button id="printNav" class="nav-action">
+                <i class="fas fa-print"></i>
+                <span data-fa="چاپ رزومه" data-en="Print CV" data-ar="طباعة السيرة">چاپ رزومه</span>
+            </button>
+        </div>
+    </div>
+    <div class="mobile-nav">
+        <a href="#about" class="nav-link"><i class="fas fa-user"></i><span data-fa="درباره" data-en="About" data-ar="عني">درباره</span></a>
+        <a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i><span data-fa="سوابق" data-en="Experience" data-ar="الخبرات">سوابق</span></a>
+        <a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i><span data-fa="تحصیلات" data-en="Education" data-ar="التعليم">تحصیلات</span></a>
+        <a href="#skills" class="nav-link"><i class="fas fa-tools"></i><span data-fa="مهارت‌ها" data-en="Skills" data-ar="المهارات">مهارت‌ها</span></a>
+        <a href="#portfolio" class="nav-link"><i class="fas fa-images"></i><span data-fa="نمونه‌کار" data-en="Portfolio" data-ar="الأعمال">نمونه‌کار</span></a>
+        <button id="langToggleMobile" class="nav-action">
             <i class="fas fa-globe"></i>
-            <span id="langText">English</span>
+            <span id="langTextMobile">English</span>
+        </button>
+        <button id="printNavMobile" class="nav-action">
+            <i class="fas fa-print"></i>
+            <span data-fa="چاپ" data-en="Print" data-ar="طباعة">چاپ</span>
         </button>
     </div>
 
@@ -24,7 +51,7 @@
             <div class="profile-header">
                 <div class="profile-info">
                     <h1 class="profile-name" data-fa="احمد فاضلی" data-en="Ahmad Fazeli" data-ar="أحمد فاضلي">احمد فاضلی</h1>
-                    <p class="profile-title" data-fa="توسعه دهنده کسب و کار و برنامه نویس" data-en="Business Developer and Programmer" data-ar="مطور أعمال ومبرمج">توسعه دهنده کسب و کار و برنامه نویس</p>
+                    <p class="profile-title" data-fa="توسعه دهنده کسب و کار و برنامه نویس" data-en="Business Developer and Programmer" data-ar="مطور أعمال ومبرمج"></p>
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -68,7 +95,7 @@
                     </div>
                 </div>
             </div>
-            <div class="about-section">
+            <div class="about-section" id="about">
                 <h2 class="section-title" data-fa="درباره من" data-en="About Me" data-ar="عني">درباره من</h2>
                 <p class="about-text" data-fa="ایده‌نگر، تحلیل‌گر سیستم و متخصص تیم‌سازی. دارای انعطاف‌پذیری بالا و خستگی‌ناپذیر در جستجو برای بهترین راه‌کارها و حل مسائل پیچیده سازمانی." data-en="Idea-oriented system analyst and team builder. Possessing high flexibility and tirelessly searching for the best solutions and solving complex organizational problems." data-ar="محلل أنظمة ومنشئ فرق متخصص. يتمتع بمرونة عالية ويبحث بلا كلل عن أفضل الحلول لحل المشكلات التنظيمية المعقدة.">
                     ایده‌نگر، تحلیل‌گر سیستم و متخصص تیم‌سازی. دارای انعطاف‌پذیری بالا و خستگی‌ناپذیر در جستجو برای بهترین راه‌کارها و حل مسائل پیچیده سازمانی.
@@ -97,7 +124,7 @@
                     </div>
                 </div>
             </section>
-            <section class="experience-section">
+            <section class="experience-section" id="experience">
                 <h2 class="section-title" data-fa="سوابق کاری" data-en="Work Experience" data-ar="الخبرات العملية">سوابق کاری</h2>
                 <div class="timeline">
                     <div class="timeline-item">
@@ -299,7 +326,7 @@
                 </div>
             </section>
 
-            <section class="education-section">
+            <section class="education-section" id="education">
                 <h2 class="section-title" data-fa="تحصیلات و گواهینامه‌ها" data-en="Education & Certificates" data-ar="التعليم والشهادات">تحصیلات و گواهینامه‌ها</h2>
                 <div class="certificates-grid">
                     <div class="certificate-item">
@@ -431,7 +458,7 @@
                 </div>
             </section>
 
-            <section class="skills-section">
+            <section class="skills-section" id="skills">
                 <h2 class="section-title" data-fa="مهارت‌ها" data-en="Skills" data-ar="المهارات">مهارت‌ها</h2>
                 <div class="skills-container">
                     <div class="skill-category">
@@ -566,7 +593,7 @@
                 </div>
             </section>
 
-            <section class="portfolio-section">
+            <section class="portfolio-section" id="portfolio">
                 <h2 class="section-title" data-fa="آخرین نمونه سایت‌های طراحی شده" data-en="Recent Website Portfolio" data-ar="أحدث نماذج المواقع المصممة">آخرین نمونه سایت‌های طراحی شده</h2>
                 <div class="portfolio-grid">
                     <div class="portfolio-item">
