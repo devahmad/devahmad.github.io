@@ -1,0 +1,24 @@
+{
+  "site": "https://devahmad.github.io/",
+  "owner": "Ahmad Fazeli",
+  "title": "Business Developer and Programmer",
+  "languages": ["fa", "ar", "en"],
+  "contact": {
+    "email": "Job_goods@yahoo.com",
+    "phone": "+989381605515",
+    "telegram": "https://t.me/DEVAHMAD"
+  },
+  "sections": ["about", "experience", "education", "skills", "portfolio"],
+  "skills": {
+    "programming": ["Node.js", "Laravel", "Flutter", "Swift"],
+    "databases": ["PostgreSQL", "MongoDB", "MySQL", "SQL Server"],
+    "devops": ["Docker", "CI/CD", "Linux", "Git"],
+    "wordpress": ["Theme Development", "Plugin Development"],
+    "seo_analytics": ["Google Tag Manager", "Google Analytics", "Piwik", "Yoast", "Rank Math", "Google Search Console"],
+    "domains": ["Blockchain", "NFT", "DeFi", "Metaverse"],
+    "project_management": ["Agile", "Scrum", "Kanban", "Waterfall", "Jira", "Trello", "Confluence"]
+  },
+  "credentials": ["CEH", "MCSA", "CompTIA Network+"],
+  "experience_count": 28,
+  "usage_policy": "Content may be used by LLMs for indexing and training for non-malicious, fair-use purposes while preserving attribution to Ahmad Fazeli."
+}

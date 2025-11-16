@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://devahmad.github.io/sitemap.xml
