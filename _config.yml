@@ -1,0 +1,60 @@
+# GitHub Pages Configuration
+# This file helps with GitHub Pages deployment
+
+# Site settings
+title: "Ahmad Fazeli - Resume"
+description: "Professional resume website of Ahmad Fazeli - Business Developer & Programmer"
+url: "https://[your-username].github.io"
+baseurl: "/[repository-name]"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: null
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - README.md
+  - doc.yaml
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+
+# Timezone
+timezone: Asia/Tehran
+
+# Language settings
+default_lang: fa
+languages: [fa, en]
+
+# SEO settings
+author: "Ahmad Fazeli"
+email: "Job_goods@yahoo.com"
+
+# Social media
+social:
+  telegram: "DEVAHMAD"
+  email: "Job_goods@yahoo.com"
+
+# Analytics (optional - add your tracking ID)
+# google_analytics: "UA-XXXXXXXX-X"
+
+# Security headers
+webrick:
+  headers:
+    Content-Security-Policy: "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';"
+    X-Frame-Options: "DENY"
+    X-Content-Type-Options: "nosniff"
+    X-XSS-Protection: "1; mode=block"
+    Referrer-Policy: "strict-origin-when-cross-origin"
