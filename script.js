@@ -273,6 +273,34 @@ document.head.appendChild(styleSheet);
 
 // Initialize print button after DOM loads (removed floating button)
 
+// Service Worker Registration for offline functionality and caching
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+                console.log('ServiceWorker registration successful');
+            })
+            .catch(err => {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+    });
+}
+
+// Performance monitoring
+if ('PerformanceObserver' in window) {
+    const perfObserver = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+            if (entry.entryType === 'largest-contentful-paint') {
+                console.log('LCP:', entry.startTime);
+            }
+            if (entry.entryType === 'first-input-delay') {
+                console.log('FID:', entry.processingStart - entry.startTime);
+            }
+        }
+    });
+    perfObserver.observe({ entryTypes: ['largest-contentful-paint', 'first-input-delay'] });
+}
+
 // Ensure all sections are visible before printing
 window.addEventListener('beforeprint', () => {
     document.querySelectorAll('section, .timeline-item, .certificate-item, .skill-category, .brand-item, .portfolio-item').forEach(el => {

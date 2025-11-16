@@ -8,6 +8,106 @@
     <link rel="canonical" href="https://devahmad.github.io/">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#00633D">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Ahmad Fazeli Resume">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <style>
+        /* Critical CSS for above-the-fold content */
+        :root {
+            --primary-color: #00633D;
+            --secondary-color: #004C2F;
+            --accent-color: #1AA874;
+            --text-color: #2D3748;
+            --bg-color: #F7FAFC;
+            --card-bg: #FFFFFF;
+            --border-color: #E2E8F0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Vazirmatn', 'Noto Kufi Arabic', system-ui, -apple-system, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .profile-title {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        .profile-photo {
+            width: 284px;
+            height: 284px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            box-shadow: var(--shadow);
+        }
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .nav-action {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .nav-action:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+            .profile-photo {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ahmad Fazeli - Business Developer & Programmer">
     <meta property="og:description" content="Full-Stack Developer & Business Developer with 15+ years experience">
@@ -17,11 +117,14 @@
     <meta name="twitter:title" content="Ahmad Fazeli - Resume">
     <meta name="twitter:description" content="Full-Stack • Blockchain • WordPress • DevOps • Project Management">
     <meta name="twitter:image" content="https://devahmad.github.io/ahmadprofile.jpg">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -124,7 +227,7 @@
                     </div>
                 </div>
                 <div class="profile-image">
-                    <img src="ahmadprofile.jpg" alt="Ahmad Fazeli" class="profile-photo">
+                    <img src="ahmadprofile.jpg" alt="Ahmad Fazeli" class="profile-photo" width="284" height="284" loading="eager" fetchpriority="high" srcset="ahmadprofile-200w.jpg 200w, ahmadprofile-284w.jpg 284w, ahmadprofile-400w.jpg 400w" sizes="(max-width: 768px) 200px, 284px">
                 </div>
             </div>
             <div class="cta-metrics">
@@ -653,7 +756,7 @@
                 <h2 class="section-title" data-fa="آخرین نمونه سایت‌های طراحی شده" data-en="Recent Website Portfolio" data-ar="أحدث نماذج المواقع المصممة">آخرین نمونه سایت‌های طراحی شده</h2>
                 <div class="portfolio-grid">
                     <div class="portfolio-item">
-                        <div class="portfolio-icon">
+                        <div class="portfolio-icon" loading="lazy">
                             <i class="fas fa-globe"></i>
                         </div>
                         <a href="https://www.kopool.ir" target="_blank" rel="noopener noreferrer" class="portfolio-link">www.kopool.ir</a>

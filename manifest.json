@@ -1,0 +1,19 @@
+{
+  "name": "Ahmad Fazeli - Resume",
+  "short_name": "Ahmad Resume",
+  "description": "Business Developer & Programmer Resume",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7FAFC",
+  "theme_color": "#00633D",
+  "icons": [
+    {
+      "src": "ahmadprofile.jpg",
+      "sizes": "400x400",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "fa",
+  "dir": "rtl"
+}
