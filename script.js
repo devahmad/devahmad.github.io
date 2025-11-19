@@ -329,3 +329,46 @@ window.addEventListener('beforeprint', () => {
         el.style.transform = 'none';
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const thumbs = document.querySelectorAll('.portfolio-thumb');
+    thumbs.forEach(img => {
+        if (!img.complete) {
+            img.classList.add('loading');
+        }
+        img.addEventListener('load', () => {
+            img.classList.remove('loading');
+        });
+        img.addEventListener('error', () => {
+            img.classList.remove('loading');
+        });
+    });
+
+    const cards = document.querySelectorAll('.portfolio-item');
+    cards.forEach(card => {
+        const link = card.querySelector('.portfolio-link');
+        if (link) {
+            card.setAttribute('tabindex', '0');
+            card.addEventListener('click', () => {
+                window.open(link.href, '_blank', 'noopener,noreferrer');
+            });
+            card.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    window.open(link.href, '_blank', 'noopener,noreferrer');
+                }
+            });
+        }
+    });
+
+    const valueCovers = document.querySelectorAll('.value-cover');
+    valueCovers.forEach(img => {
+        if (!img.complete) {
+            img.classList.add('loading');
+        }
+        img.addEventListener('load', () => {
+            img.classList.remove('loading');
+        });
+        img.addEventListener('error', () => {
+            img.classList.remove('loading');
+        });
+    });
+});

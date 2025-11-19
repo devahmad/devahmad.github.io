@@ -1,24 +1,215 @@
 {
   "site": "https://devahmad.github.io/",
   "owner": "Ahmad Fazeli",
-  "title": "Business Developer and Programmer",
-  "languages": ["fa", "ar", "en"],
+  "title": {
+    "fa": "توسعه دهنده کسب و کار و برنامه نویس",
+    "en": "Business Developer and Programmer",
+    "ar": "مطور أعمال ومبرمج"
+  },
+  "languages": ["fa", "ar", "en", "ku"],
   "contact": {
     "email": "Job_goods@yahoo.com",
     "phone": "+989381605515",
-    "telegram": "https://t.me/DEVAHMAD"
+    "telegram": "https://t.me/DEVAHMAD",
+    "linkedin": "https://www.linkedin.com/in/ahmad-fazeli/",
+    "whatsapp": "https://wa.me/989381605515"
   },
-  "sections": ["about", "experience", "education", "skills", "portfolio"],
+  "social": {
+    "sameAs": [
+      "https://t.me/DEVAHMAD",
+      "https://www.linkedin.com/in/ahmad-fazeli/",
+      "https://wa.me/989381605515",
+      "https://www.kopool.ir",
+      "https://www.duzduzani.ir",
+      "https://www.misbahalhussein.org",
+      "https://www.2aincorp.com",
+      "https://www.charzanoo.com",
+      "https://www.kianpanel.ir"
+    ]
+  },
+  "about": {
+    "paragraphs": {
+      "fa": [
+        "ایده‌نگر، تحلیل‌گر سیستم و متخصص تیم‌سازی. دارای انعطاف‌پذیری بالا و خستگی‌ناپذیر در جستجو برای بهترین راه‌کارها و حل مسائل پیچیده سازمانی.",
+        "بیش از ۱۵ سال تجربه در طراحی و پیاده‌سازی محصولات وب و موبایل، معماری سیستم‌های مقیاس‌پذیر، بهینه‌سازی عملکرد و سئو، و هدایت تیم‌های چندتخصصی. همکاری با سازمان‌ها و برندهای بین‌المللی و تحویل پروژه‌های باکیفیت در بازه زمانی مشخص."
+      ],
+      "en": [
+        "Idea-oriented system analyst and team builder. Possessing high flexibility and tirelessly searching for the best solutions and solving complex organizational problems.",
+        "Over 15 years of experience delivering web and mobile products, architecting scalable systems, optimizing performance and SEO, and leading cross‑functional teams. Worked with international organizations and brands, delivering high‑quality projects on schedule."
+      ],
+      "ar": [
+        "محلل أنظمة ومنشئ فرق متخصص. يتمتع بمرونة عالية ويبحث بلا كلل عن أفضل الحلول لحل المشكلات التنظيمية المعقدة.",
+        "خبرة تتجاوز 15 عاماً في تطوير منتجات الويب والموبايل، هندسة أنظمة قابلة للتوسع، تحسين الأداء والسيو، وقيادة فرق متعددة التخصصات. تعاونت مع مؤسسات وعلامات دولية وقدمت مشاريع عالية الجودة في الوقت المحدد."
+      ]
+    },
+    "highlights": {
+      "fa": [
+        "تخصص‌ها: فول‌استک، بلاکچین، DevOps، وردپرس اینترپرایز، تحلیل سیستم",
+        "رویکرد: معماری ماژولار، امنیت پیشگیرانه، تست خودکار، استقرار پیوسته",
+        "دستاوردها: کاهش CLS، افزایش LCP/FCP، مقیاس‌پذیری سرویس‌ها، بهبود تجربه کاربری",
+        "ارزش‌ها: تعهد به کیفیت، تحویل به‌موقع، ارتباط شفاف، یادگیری مستمر"
+      ],
+      "en": [
+        "Specialties: Full‑Stack, Blockchain, DevOps, Enterprise WordPress, System Analysis",
+        "Approach: Modular architecture, proactive security, automated testing, continuous delivery",
+        "Achievements: Reduced CLS, improved LCP/FCP, scaled services, enhanced UX",
+        "Values: Commitment to quality, on‑time delivery, transparent communication, continuous learning"
+      ],
+      "ar": [
+        "التخصصات: فل ستاك، البلوكشين، ديف أوبس، ووردبريس مؤسسي، تحليل الأنظمة",
+        "النهج: هندسة معيارية، أمان استباقي، اختبار آلي، تسليم مستمر",
+        "الإنجازات: تقليل CLS، تحسين LCP/FCP، توسيع الخدمات، تعزيز تجربة المستخدم",
+        "القيم: الالتزام بالجودة، التسليم في الوقت، تواصل شفاف، تعلم مستمر"
+      ]
+    }
+  },
+  "values": [
+    {
+      "key": "system_architecture",
+      "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&auto=format&fit=crop&q=60",
+      "title": {"fa": "معماری سیستم‌ها", "en": "System Architecture", "ar": "هندسة الأنظمة"},
+      "text": {"fa": "طراحی معماری‌های مقیاس‌پذیر، امن و قابل نگهداری برای وب و موبایل", "en": "Design scalable, secure, maintainable architectures for web and mobile", "ar": "تصميم معماريات قابلة للتوسع وآمنة وسهلة الصيانة للويب والموبايل"}
+    },
+    {
+      "key": "delivery_excellence",
+      "cover": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1200&auto=format&fit=crop&q=60",
+      "title": {"fa": "تحویل باکیفیت و به‌موقع", "en": "Delivery Excellence", "ar": "امتياز التنفيذ"},
+      "text": {"fa": "تحویل به‌موقع با کیفیت بالا، پیاده‌سازی CI/CD و اتوماسیون", "en": "On-time high-quality delivery with CI/CD and automation", "ar": "تسليم عالي الجودة في الوقت المحدد مع CI/CD والأتمتة"}
+    },
+    {
+      "key": "technical_leadership",
+      "cover": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&auto=format&fit=crop&q=60",
+      "title": {"fa": "رهبری فنی و منتورینگ", "en": "Technical Leadership & Mentoring", "ar": "القيادة التقنية والإرشاد"},
+      "text": {"fa": "ساخت تیم‌های توانمند، کدنویسی تمیز، و انتقال دانش", "en": "Build capable teams, clean code practices, and knowledge transfer", "ar": "بناء فرق قوية، ممارسات كود نظيف، ونقل المعرفة"}
+    }
+  ],
+  "tech_stack": [
+    {"name": "Node.js", "desc": {"fa": "محیط اجرای جاوااسکریپت برای بک‌اند مقیاس‌پذیر و APIها", "en": "JavaScript runtime for scalable backends and APIs", "ar": "بيئة تشغيل جافاسكربت لبناء خدمات خلفية و واجهات APIs قابلة للتوسع"}},
+    {"name": "Laravel", "desc": {"fa": "فریم‌ورک PHP با معماری MVC، روتینگ و Eloquent ORM", "en": "PHP framework with MVC, routing and Eloquent ORM", "ar": "إطار عمل PHP بـ MVC والتوجيه و Eloquent ORM"}},
+    {"name": "Flutter", "desc": {"fa": "کراس‌پلتفرم برای ساخت اپ‌های موبایل/وب با عملکرد بومی", "en": "Cross‑platform UI toolkit for mobile/web apps with native performance", "ar": "عدة واجهات متعددة المنصات لبناء تطبيقات الموبايل/الويب بأداء شبه أصلي"}},
+    {"name": "Swift", "desc": {"fa": "زبان اپل برای توسعه iOS/macOS با کارایی بالا", "en": "Apple language for high‑performance iOS/macOS development", "ar": "لغة آبل لتطوير iOS/macOS بكفاءة عالية"}},
+    {"name": "PostgreSQL", "desc": {"fa": "دیتابیس رابطه‌ای پیشرفته با ACID، ایندکس‌ها و JSONB", "en": "Advanced relational DB with ACID, indexing and JSONB", "ar": "قاعدة بيانات علائقية متقدمة تدعم ACID والفهارس وJSONB"}},
+    {"name": "MongoDB", "desc": {"fa": "دیتابیس سندمحور NoSQL با شِمای منعطف و مقیاس‌پذیری", "en": "Document‑oriented NoSQL DB with flexible schema and scalability", "ar": "قاعدة بيانات وثائق NoSQL بمرونة المخطط وقابلية التوسع"}},
+    {"name": "Docker", "desc": {"fa": "کانتینرسازی برای استقرار قابل‌تکرار و ایزوله‌سازی محیط‌ها", "en": "Containerization for reproducible deployments and environment isolation", "ar": "حاويات للتشغيل القابل لإعادة الإنتاج وعزل البيئات"}},
+    {"name": "CI/CD", "desc": {"fa": "پایپ‌لاین‌های خودکار برای ساخت، تست و استقرار مداوم", "en": "Automated pipelines for continuous build, test and delivery", "ar": "خطوط أنابيب آلية للبناء والاختبار والنشر المستمر"}}
+  ],
   "skills": {
-    "programming": ["Node.js", "Laravel", "Flutter", "Swift"],
-    "databases": ["PostgreSQL", "MongoDB", "MySQL", "SQL Server"],
-    "devops": ["Docker", "CI/CD", "Linux", "Git"],
-    "wordpress": ["Theme Development", "Plugin Development"],
-    "seo_analytics": ["Google Tag Manager", "Google Analytics", "Piwik", "Yoast", "Rank Math", "Google Search Console"],
-    "domains": ["Blockchain", "NFT", "DeFi", "Metaverse"],
-    "project_management": ["Agile", "Scrum", "Kanban", "Waterfall", "Jira", "Trello", "Confluence"]
+    "categories": [
+      {"name": {"fa": "زبان‌های برنامه‌نویسی و دیتابیس", "en": "Programming & Databases", "ar": "لغات البرمجة وقواعد البيانات"}, "items": ["Dart (Flutter)", "Swift", "Php (Native & Laravel)", "JavaScript", "PostgreSQL", "MySQL", "SQL Server", "MongoDB"]},
+      {"name": {"fa": "ابزارها، پلتفرم‌ها و DevOps", "en": "Tools, Platforms & DevOps", "ar": "الأدوات، المنصات وديفوپس"}, "items": ["Linux", "macOS", "Git", "GitHub", "Docker", "CI/CD", "Security & Hacking"]},
+      {"name": {"fa": "نرم‌افزارهای طراحی و مدیریت", "en": "Design & Management Software", "ar": "برامج التصميم والإدارة"}, "items": ["Adobe Family", "Xcode", "Figma", "Jira", "Trello", "Confluence"]},
+      {"name": {"fa": "حوزه‌های تخصصی", "en": "Specialized Domains", "ar": "المجالات التخصصية"}, "items": ["Blockchain", "NFT", "DeFi", "Metaverse"]},
+      {"name": {"fa": "مدیریت پروژه و متدولوژی", "en": "Project Management & Methodology", "ar": "إدارة المشاريع والمنهجية"}, "items": ["Agile (Scrum)", "Kanban", "Waterfall"]},
+      {"name": {"fa": "زبان‌های انسانی", "en": "Human Languages", "ar": "اللغات البشرية"}, "items": ["Persian (Native)", "Arabic (Fluent)", "English (Professional)", "Kurdish (Conversational)"]},
+      {"name": {"fa": "سئو و آنالیتیکس", "en": "SEO & Analytics", "ar": "تحسين محركات البحث والتحليلات"}, "items": ["Tag Manager", "Google Analytics", "Piwik"]}
+    ]
   },
-  "credentials": ["CEH", "MCSA", "CompTIA Network+"],
-  "experience_count": 28,
+  "human_languages": [
+    {"code": "fa", "name": {"fa": "فارسی", "en": "Persian", "ar": "الفارسية"}, "level": "native"},
+    {"code": "ar", "name": {"fa": "عربی", "en": "Arabic", "ar": "العربية"}, "level": "fluent"},
+    {"code": "en", "name": {"fa": "انگلیسی", "en": "English", "ar": "الإنجليزية"}, "level": "professional"},
+    {"code": "ku", "name": {"fa": "کردی", "en": "Kurdish", "ar": "الكردية"}, "level": "conversational"}
+  ],
+  "portfolio": [
+    "https://www.kopool.ir",
+    "https://www.duzduzani.ir",
+    "https://www.misbahalhussein.org",
+    "https://www.2aincorp.com",
+    "https://www.charzanoo.com",
+    "https://www.pinnaclemena.com",
+    "https://www.kofilm.ir",
+    "https://www.atpqco.ir",
+    "https://kameli.com/",
+    "https://citizenmatch.com/",
+    "https://www.plasticjafari.com",
+    "https://www.kianpanel.ir",
+    "https://www.shop-zoha.com",
+    "https://www.playco.ir",
+    "https://emiratesparkzooandresort.com/",
+    "https://ipartcpa.ir/",
+    "https://aftabir.com/",
+    "https://cyclingtehran.ir/",
+    "https://arazmediacorp.com/",
+    "https://smartmfz.ir/",
+    "https://kokhaneh.ir/",
+    "https://textildruck-express.de/"
+  ],
+  "experience": [
+    {"title": "همکاری با مجموعه شرکتهای فونیک لتک", "company": "Phoenix & Ltech - ژاپن"},
+    {"title": "طراح مجله الدلیل گروپ", "company": "Al-Daleel Group - عراق، اربیل"},
+    {"title": "مدیر شرکت مختبر الکـواد", "company": "Mokhtabar Al-Kwad Company - عراق"},
+    {"title": "مدیر فنی شبکه بین‌المللی اربعین", "company": "Arbaeen International Network - عراق"},
+    {"title": "همکاری با العتبة امام حسین (ع)", "company": "Imam Hussain Holy Shrine - عراق"},
+    {"title": "طراحی سایت دفتر آیت الله العظمی دوزدوزانی تبریزی", "company": "Office of Grand Ayatollah Duzduzani Tabrizi - قم"},
+    {"title": "همکاری با تیم برنامه نویسی سایت علی بابا", "company": "Alibaba.ir - تهران"},
+    {"title": "همکاری با شرکت بین‌المللی زین عراق", "company": "Zain Iraq - عراق"},
+    {"title": "طراحی و پیاده‌سازی سیستم مدیریت هتل", "company": "هتل قصر البحرین - بحرین"}
+  ],
+  "education_certificates": [
+    "Certified Ethical Hacker (CEH)",
+    "Microsoft Server (MCSA)",
+    "CompTIA Network+",
+    "Blockchain & Smart Contracts"
+  ],
+  "metrics": {
+    "years_experience": "15+",
+    "successful_projects": "60+",
+    "industries": "12+",
+    "countries": "2+"
+  },
+  "pwa": {
+    "manifest": {
+      "name": "Ahmad Fazeli - Resume",
+      "short_name": "Ahmad Resume",
+      "start_url": "/",
+      "theme_color": "#00633D"
+    }
+  },
+  "seo": {
+    "on_page": {
+      "meta_title": true,
+      "meta_description": true,
+      "canonical": true,
+      "robots_meta": "index, follow",
+      "open_graph": true,
+      "twitter_cards": true,
+      "json_ld_person": true,
+      "language_strategy": "single_url_multilang",
+      "hreflang_links": false
+    },
+    "technical": {
+      "sitemap_xml": "sitemap.xml",
+      "robots_txt": "robots.txt",
+      "https": true,
+      "http2": true,
+      "resource_hints": ["dns-prefetch", "preconnect", "preload"],
+      "critical_css_inline": true,
+      "lazy_loading_images": true,
+      "responsive_images": false,
+      "font_display_swap": true,
+      "service_worker": true,
+      "cache_control": "static via GitHub Pages",
+      "csp": false
+    },
+    "core_web_vitals": {
+      "lcp": "optimized via critical CSS and image hints",
+      "cls": "reduced via space reservation and consistent fonts",
+      "fid": "n/a (replaced by INP)",
+      "inp": "kept low via lightweight scripts"
+    },
+    "content": {
+      "structured_data": ["Person"],
+      "headings_hierarchy": true,
+      "internal_links": true
+    },
+    "tools": [
+      "Google Search Console",
+      "Lighthouse",
+      "PageSpeed Insights",
+      "Google Analytics",
+      "Google Tag Manager",
+      "Piwik/Matomo"
+    ]
+  },
   "usage_policy": "Content may be used by LLMs for indexing and training for non-malicious, fair-use purposes while preserving attribution to Ahmad Fazeli."
 }
