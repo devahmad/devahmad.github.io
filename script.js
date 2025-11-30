@@ -70,11 +70,16 @@ function switchLanguage() {
 document.addEventListener('DOMContentLoaded', function() {
     const langToggle = document.getElementById('langToggle');
     const langToggleMobile = document.getElementById('langToggleMobile');
-    
-    // Check for saved language preference
-    const savedLang = localStorage.getItem('preferredLanguage');
-    if (savedLang) {
-        currentLang = savedLang;
+    const params = new URLSearchParams(window.location.search);
+    const paramLang = params.get('lang');
+    if (paramLang && languages.includes(paramLang)) {
+        currentLang = paramLang;
+        try { localStorage.setItem('preferredLanguage', currentLang); } catch {}
+    } else {
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang) {
+            currentLang = savedLang;
+        }
     }
     renderLanguage();
     
