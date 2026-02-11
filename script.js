@@ -1,9 +1,9 @@
 // Language Switching Functionality
-let currentLang = 'fa';
+let currentLang = 'en';
 const languages = ['fa', 'ar', 'en'];
 const langNames = {
     'fa': 'فارسی',
-    'ar': 'العربية', 
+    'ar': 'العربية',
     'en': 'English'
 };
 
@@ -67,14 +67,14 @@ function switchLanguage() {
 }
 
 // Initialize language switcher
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const langToggle = document.getElementById('langToggle');
     const langToggleMobile = document.getElementById('langToggleMobile');
     const params = new URLSearchParams(window.location.search);
     const paramLang = params.get('lang');
     if (paramLang && languages.includes(paramLang)) {
         currentLang = paramLang;
-        try { localStorage.setItem('preferredLanguage', currentLang); } catch {}
+        try { localStorage.setItem('preferredLanguage', currentLang); } catch { }
     } else {
         const savedLang = localStorage.getItem('preferredLanguage');
         if (savedLang) {
@@ -82,11 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     renderLanguage();
-    
+
     // Add click event listener
     if (langToggle) langToggle.addEventListener('click', switchLanguage);
     if (langToggleMobile) langToggleMobile.addEventListener('click', switchLanguage);
-    
+
     // Add smooth scrolling for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -100,13 +100,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Add intersection observer for animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
+
     // Observe all sections for scroll animations
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
@@ -139,23 +139,23 @@ document.addEventListener('DOMContentLoaded', function() {
         aboutEl.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(aboutEl);
     }
-    
+
     // Add hover effects to skill tags
     const skillTags = document.querySelectorAll('.skill-tag');
     skillTags.forEach(tag => {
-        tag.addEventListener('mouseenter', function() {
+        tag.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-2px) scale(1.05)';
         });
-        
-        tag.addEventListener('mouseleave', function() {
+
+        tag.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
         });
     });
-    
+
     // Add click effects to portfolio links
     const portfolioLinks = document.querySelectorAll('.portfolio-link');
     portfolioLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             // Add a subtle animation
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
@@ -163,13 +163,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 100);
         });
     });
-    
+
     // Add typing effect to profile title
     const profileTitle = document.querySelector('.profile-title');
     if (profileTitle) {
         const originalText = profileTitle.textContent;
         profileTitle.textContent = '';
-        
+
         let i = 0;
         const typingEffect = setInterval(() => {
             if (i < originalText.length) {
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 50);
     }
-    
+
     // Add dynamic background effect
     const profileSection = document.querySelector('.profile-section');
     if (profileSection) {
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Add keyboard navigation
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     // Alt + L to switch language
     if (e.altKey && e.key === 'l') {
         e.preventDefault();
@@ -242,7 +242,7 @@ function addPrintButton() {
         z-index: 1000;
         transition: all 0.3s ease;
     `;
-    
+
     printBtn.addEventListener('click', printResume);
     printBtn.addEventListener('mouseenter', () => {
         printBtn.style.transform = 'translateY(-2px)';
@@ -250,7 +250,7 @@ function addPrintButton() {
     printBtn.addEventListener('mouseleave', () => {
         printBtn.style.transform = 'translateY(0)';
     });
-    
+
     document.body.appendChild(printBtn);
 }
 
@@ -308,7 +308,7 @@ if ('PerformanceObserver' in window) {
     // CLS Monitoring
     let clsValue = 0;
     let clsEntries = [];
-    
+
     const clsObserver = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
             if (!entry.hadRecentInput) {
@@ -318,9 +318,9 @@ if ('PerformanceObserver' in window) {
             }
         }
     });
-    
+
     clsObserver.observe({ type: 'layout-shift', buffered: true });
-    
+
     // Report CLS on page unload
     window.addEventListener('beforeunload', () => {
         console.log('Final CLS Score:', clsValue.toFixed(4));

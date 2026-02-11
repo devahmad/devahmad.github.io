@@ -35,8 +35,8 @@ exclude:
 timezone: Asia/Tehran
 
 # Language settings
-default_lang: fa
-languages: [fa, en]
+default_lang: en
+languages: [fa, en, ar]
 
 # SEO settings
 author: "Ahmad Fazeli"
