@@ -392,7 +392,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const filterValue = btn.getAttribute('data-filter');
 
                 portfolioItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    const categoriesAttr = item.getAttribute('data-category');
+                    const itemCategories = categoriesAttr ? categoriesAttr.split(',').map(c => c.trim()) : [];
+                    if (filterValue === 'all' || itemCategories.includes(filterValue)) {
                         item.classList.remove('hide');
                         // Reset animation
                         item.style.opacity = '0';
