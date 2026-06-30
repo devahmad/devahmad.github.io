@@ -1074,7 +1074,7 @@ body[lang="en"] .timeline::before {
 
 body[lang="en"] .timeline-marker {
     right: auto;
-    left: -37px;
+    left: -20px;
 }
 
 body[lang="en"] .timeline-item:hover {

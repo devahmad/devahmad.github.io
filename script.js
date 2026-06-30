@@ -256,18 +256,22 @@ function addPrintButton() {
 
 // Add print styles
 const printStyles = `
-    @page { size: A4; margin: 12mm; }
+    @page { size: A4; margin: 0; }
     @media print {
-        .language-switcher, .print-btn, .social-links { display: none !important; }
-        body { background: white !important; color: black !important; }
+        .language-switcher, .print-btn, .social-links, .side-nav, .mobile-nav, .portfolio-filters { display: none !important; }
+        body { background: white !important; color: black !important; padding: 15mm; }
         * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-        .container { box-shadow: none !important; margin: 0 !important; padding: 20px !important; background: white !important; overflow: visible !important; }
-        .profile-section { background: #f5f5f5 !important; color: black !important; -webkit-print-color-adjust: exact; }
+        .container { box-shadow: none !important; margin: 0 !important; padding: 0 !important; background: white !important; overflow: visible !important; max-width: 100% !important; }
+        .profile-section { background: white !important; color: black !important; -webkit-print-color-adjust: exact; padding: 0 !important; border: none !important; box-shadow: none !important; margin-bottom: 20px !important; transform: none !important; overflow: visible !important; height: auto !important; }
+        .profile-section * { color: black !important; }
+        .profile-section::before, .profile-section::after { display: none !important; }
+        .cta-buttons { display: none !important; }
+        .metric-card { background: transparent !important; border: 1px solid #ccc !important; box-shadow: none !important; }
         .skill-tag { background: #e0e0e0 !important; color: black !important; border: 1px solid #ccc; }
         a { color: black !important; text-decoration: none !important; }
         .timeline-marker { background: #666 !important; -webkit-print-color-adjust: exact; }
         .certificate-icon { background: #666 !important; -webkit-print-color-adjust: exact; }
-        section, .timeline-item, .certificate-item, .skill-category, .brand-item, .portfolio-item { break-inside: avoid; page-break-inside: avoid; opacity: 1 !important; transform: none !important; }
+        section, .timeline-item, .certificate-item, .skill-category, .brand-item, .portfolio-item, .profile-section { break-inside: avoid; page-break-inside: avoid; opacity: 1 !important; transform: none !important; }
     }
 `;
 
